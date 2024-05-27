@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURDS</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+ <div class="container ">
+    <h1 class="text-capitalize text-center my-3 py-4 "><i class="fa-solid fa-bookmark px-2 fs-4"></i>Store management System<i class="fa-solid fa-bookmark px-2 fs-4"></i></h1>
+
+ </div>
+
+<div class="w-75 mx-auto text-capitalize">
+
+    <div id="alertForm" class="alert alert-danger py-2 fw-bold text-center d-none">Form Invalid</div>
+
+    <label for="productName" class="mt-2">product name : </label>
+    <input type="text" oninput="validateInputs(this)" id="productName" class="form-control mt-1 mb-3" />
+    <div class="alert alert-danger py-2 fw-medium d-none">Product Name Must Starts With Capital Letter...</div>
+
+    <label for="productPrice" >product Price : </label>
+    <input type="number" oninput="validateInputs(this)"  id="productPrice" class="form-control mt-1 mb-3" />
+    <div class="alert alert-danger py-2 fw-medium d-none">The minimum price value is 1000...</div>
+
+
+    <label for="productCategory" >product Category : </label>
+    <input type="text" list="cat" oninput="validateInputs(this)"  id="productCategory" class="form-control mt-1 mb-3 " />
+    <div class="alert alert-danger py-2 fw-medium d-none">The Types are Tv , Laptop , Mobile and Tab...</div>
+
+    <datalist id="cat">
+        <option value="TV"></option>
+        <option value="Laptop"></option>
+        <option value="Mobile"></option>
+        <option value="Tap"></option>
+    </datalist>
+
+    <label for="productDescription" >product Description : </label>
+    <textarea type="text" oninput="validateInputs(this)"  id="productDescription" class="form-control mt-1 mb-3"></textarea>
+    <div class="alert alert-danger py-2 fw-medium d-none">The minimum value to describe the product is one word...</div>
+
+    <label for="productImage" >product Image : </label>
+    <input type="file" accept="image/*" id="productImage" class="form-control mt-1 mb-3" />
+    
+    <button id="addBtn" class="btn btn-outline-primary w-100 " onclick="addProduct()">Add Product</button>
+    <button  id="updateBtn" class="btn btn-outline-dark d-none w-100" onclick="updateProduct()">Update Product</button>
+</div>
+<input type="text" id="searchTerm" oninput="search()" placeholder="Search By Name ..." class="form-control mt-4 mb-1 w-75 mx-auto">
+
+<div class="container py-4">
+    <div id="rowData" class="row  gy-4  ">
+        
+    </div>
+</div>
+
+
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>
